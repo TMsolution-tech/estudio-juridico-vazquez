@@ -31,7 +31,7 @@ export function Hero() {
             style={{ animationDelay: '0.1s' }}
           >
             <span className="h-px w-12 bg-oro" />
-            Estudio jurídico penal — Salta, Argentina
+            Estudio Penal Salta
           </p>
           <h1
             className="animate-fade-up font-display max-w-4xl text-6xl font-black leading-[0.98] text-crema sm:text-7xl lg:text-8xl"
