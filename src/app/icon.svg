@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="30" fill="#111" stroke="#d0a94f" stroke-width="2.5"/>
-  <text x="28" y="45" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" fill="#ecd9a3">V</text>
-  <text x="36" y="45" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="400" fill="none" stroke="#b89344" stroke-width="1">V</text>
+  <circle cx="32" cy="32" r="29" fill="#111" stroke="#d0a94f" stroke-width="4"/>
+  <text x="28" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" fill="#ecd9a3">V</text>
+  <text x="37" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="400" fill="none" stroke="#b89344" stroke-width="1.2">V</text>
 </svg>

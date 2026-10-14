@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <circle cx="120" cy="120" r="110" fill="#111" stroke="#d0a94f" stroke-width="9"/>
+  <text x="107" y="172" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="140" font-weight="700" fill="#ecd9a3">V</text>
+  <text x="140" y="172" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="140" font-weight="400" fill="none" stroke="#b89344" stroke-width="2">V</text>
+</svg>
