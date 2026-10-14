@@ -24,7 +24,7 @@ export function AdminLoginForm() {
     })
     setLoading(false)
     if (error) {
-      setError('Credenciales incorrectas.')
+      setError(error.message || 'Credenciales incorrectas.')
       return
     }
     router.replace('/admin')
