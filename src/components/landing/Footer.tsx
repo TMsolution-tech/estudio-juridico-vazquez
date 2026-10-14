@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-8 px-4 sm:px-6">
         <div>
           <p className="font-display text-lg font-bold uppercase tracking-wide text-crema">
-            Vázquez <span className="text-oro">Estudio Penal</span>
+            Vazquez <span className="text-oro">Estudio Penal</span>
           </p>
           <p className="mt-1 text-xs">{SITE.direccion}</p>
         </div>
@@ -17,7 +17,7 @@ export function Footer() {
           <a href="#contacto" className="transition hover:text-oro">Contacto</a>
         </nav>
         <p className="text-xs">
-          © {new Date().getFullYear()} Vázquez Estudio Penal. Todos los derechos
+          © {new Date().getFullYear()} Vazquez Estudio Penal. Todos los derechos
           reservados.
         </p>
       </div>

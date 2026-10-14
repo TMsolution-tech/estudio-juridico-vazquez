@@ -1,5 +1,8 @@
+import { Reveal } from '@/components/Reveal'
+
 const SERVICES = [
   {
+    n: '01',
     title: 'Delitos Complejos',
     desc: 'Representación legal especializada en delitos de alta complejidad. Estrategia sólida y defensa comprometida en cada etapa del proceso.',
     featured: true,
@@ -12,6 +15,7 @@ const SERVICES = [
     ),
   },
   {
+    n: '02',
     title: 'Defensa en Juicio',
     desc: 'Experiencia comprobada en litigios penales. Defendemos sus derechos con firmeza en cada instancia del proceso judicial.',
     featured: false,
@@ -25,6 +29,7 @@ const SERVICES = [
     ),
   },
   {
+    n: '03',
     title: 'Asesoría Legal Preventiva',
     desc: 'Consultoría estratégica para prevenir riesgos legales. Proteja sus intereses antes de que surjan inconvenientes.',
     featured: false,
@@ -36,43 +41,53 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <div id="servicios" className="relative z-10 mx-auto -mt-32 max-w-6xl px-4 sm:px-6">
-      <div className="grid shadow-2xl shadow-black/20 md:grid-cols-3">
-        {SERVICES.map((s) => (
-          <article
-            key={s.title}
-            className={`border p-8 transition-shadow hover:shadow-xl sm:p-10 ${
-              s.featured
-                ? 'border-oxblood bg-oxblood'
-                : 'border-linea bg-papel'
-            }`}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`mb-6 h-9 w-9 ${s.featured ? 'text-oro' : 'text-oxblood'}`}
-            >
-              {s.icon}
-            </svg>
-            <h3
-              className={`font-display mb-3 text-xl font-bold ${
-                s.featured ? 'text-crema' : 'text-tinta'
+    <div id="servicios" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+      <div className="grid gap-5 md:grid-cols-3">
+        {SERVICES.map((s, i) => (
+          <Reveal key={s.title} delay={i * 120}>
+            <article
+              className={`group relative h-full overflow-hidden border p-8 transition-all duration-300 hover:-translate-y-1.5 sm:p-9 ${
+                s.featured
+                  ? 'border-oxblood bg-gradient-to-br from-oxblood to-vino'
+                  : 'border-linea bg-papel hover:border-oro/40'
               }`}
             >
-              {s.title}
-            </h3>
-            <p
-              className={`text-sm leading-relaxed ${
-                s.featured ? 'text-crema/80' : 'text-tinta-soft'
-              }`}
-            >
-              {s.desc}
-            </p>
-          </article>
+              <span
+                className={`font-display absolute right-6 top-5 text-5xl font-black leading-none ${
+                  s.featured ? 'text-crema/15' : 'text-oro/15'
+                }`}
+              >
+                {s.n}
+              </span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={`mb-7 h-10 w-10 transition-transform duration-300 group-hover:scale-110 ${
+                  s.featured ? 'text-oro' : 'text-oro'
+                }`}
+              >
+                {s.icon}
+              </svg>
+              <h3
+                className={`font-display mb-3 text-xl font-bold ${
+                  s.featured ? 'text-crema' : 'text-tinta'
+                }`}
+              >
+                {s.title}
+              </h3>
+              <p
+                className={`text-sm leading-relaxed ${
+                  s.featured ? 'text-crema/80' : 'text-tinta-soft'
+                }`}
+              >
+                {s.desc}
+              </p>
+            </article>
+          </Reveal>
         ))}
       </div>
     </div>

@@ -1,4 +1,4 @@
--- Vázquez Estudio Penal — schema inicial
+-- Vazquez Estudio Penal — schema inicial
 -- Ejecutar en el SQL Editor del proyecto Supabase nuevo.
 
 create table novedades (

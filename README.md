@@ -1,4 +1,4 @@
-# Vázquez Estudio Penal — Web
+# Vazquez Estudio Penal — Web
 
 Sitio institucional del estudio jurídico penal. Next.js 16 + React 19 + Tailwind CSS v4 + Supabase. Deploy en Vercel.
 

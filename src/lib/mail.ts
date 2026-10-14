@@ -21,7 +21,7 @@ export async function notifyConsulta(consulta: {
   })
 
   await transporter.sendMail({
-    from: `"Web Vázquez Estudio Penal" <${user}>`,
+    from: `"Web Vazquez Estudio Penal" <${user}>`,
     to,
     replyTo: consulta.email,
     subject: `Nueva consulta web — ${consulta.asunto || 'Consulta general'}`,

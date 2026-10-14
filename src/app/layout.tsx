@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Vázquez Estudio Penal — Abogado Penal en Salta",
+  title: "Vazquez Estudio Penal — Abogado Penal en Salta",
   description:
     "Estudio jurídico especializado en defensa penal en Salta, Argentina. Delitos complejos, defensa en juicio y asesoría preventiva. Consultá ahora.",
   keywords: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Ariel Vazquez abogado",
   ],
   openGraph: {
-    title: "Vázquez Estudio Penal — Abogado Penal Salta",
+    title: "Vazquez Estudio Penal — Abogado Penal Salta",
     description: "Defensa penal efectiva en Salta. Consultá ahora.",
     type: "website",
     locale: "es_AR",

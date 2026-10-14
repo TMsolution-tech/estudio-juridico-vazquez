@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* Paleta Vázquez Estudio Penal — marfil + oxblood + oro */
-  --color-marfil: #f5f1e8; /* fondo página */
-  --color-papel: #fbf8f1; /* cards sobre marfil */
-  --color-tinta: #1c1815; /* texto principal */
-  --color-tinta-soft: #6f6557; /* texto secundario */
-  --color-oxblood: #7d1a2b; /* acento principal */
-  --color-vino: #5a1120; /* hover / oxblood oscuro */
-  --color-noche: #16120f; /* superficies oscuras: hero, footer, admin */
-  --color-noche-2: #241d18; /* elevado sobre noche */
-  --color-oro: #c9a84c; /* acento dorado */
-  --color-oro-soft: #e4cf93;
-  --color-linea: #e2dac9; /* bordes sobre marfil */
-  --color-linea-noche: #3b322a; /* bordes sobre noche */
-  --color-crema: #f3ecdd; /* texto claro sobre noche */
-  --color-crema-soft: #b8ab93; /* texto secundario sobre noche */
+  /* Paleta Vazquez Estudio Penal — noir: negro cálido + oro + carmesí */
+  --color-marfil: #0d0b08; /* fondo página */
+  --color-papel: #15110d; /* cards / paneles */
+  --color-tinta: #ece3d0; /* texto principal (hueso) */
+  --color-tinta-soft: #a2957d; /* texto secundario */
+  --color-oxblood: #c22735; /* acento carmesí */
+  --color-vino: #8f1a26; /* hover carmesí */
+  --color-noche: #090705; /* superficies más profundas */
+  --color-noche-2: #14100c; /* elevado sobre noche */
+  --color-oro: #d0a94f; /* acento dorado */
+  --color-oro-soft: #ecd9a3;
+  --color-linea: #292219; /* bordes */
+  --color-linea-noche: #2d251c;
+  --color-crema: #ece3d0; /* texto claro */
+  --color-crema-soft: #a2957d;
 
   --font-display: var(--font-fraunces), Georgia, serif;
   --font-body: var(--font-inter), system-ui, sans-serif;
@@ -23,7 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: only light; /* bloquea el auto-dark-mode del navegador */
+  color-scheme: only dark;
 }
 
 body {
@@ -32,6 +32,45 @@ body {
   font-family: var(--font-body);
 }
 
+::selection {
+  background: var(--color-oro);
+  color: var(--color-noche);
+}
+
 .font-display {
   font-family: var(--font-display);
+}
+
+/* ── Animaciones ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ken-burns {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.animate-ken-burns {
+  animation: ken-burns 14s ease-out forwards;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.animate-glow {
+  animation: glow-pulse 3.2s ease-in-out infinite;
 }

@@ -1,43 +1,21 @@
 'use client'
 
 import { useState } from 'react'
-import { SITE, WHATSAPP_URL } from '@/lib/site'
+import {
+  CONTACTOS,
+  MAPS_EMBED_URL,
+  MAPS_LINK_URL,
+  SITE,
+  whatsappUrl,
+} from '@/lib/site'
 import { CONSULTA_ASUNTOS } from '@/lib/types'
 
 type Status = 'idle' | 'sending' | 'ok' | 'error'
 
 const inputCls =
-  'w-full border border-linea bg-papel px-4 py-3 text-sm text-tinta outline-none transition focus:border-oxblood focus:ring-2 focus:ring-oxblood/10'
+  'w-full border border-linea bg-noche-2 px-4 py-3 text-sm text-tinta outline-none transition placeholder:text-tinta-soft/50 focus:border-oro focus:ring-2 focus:ring-oro/15'
 const labelCls =
   'text-[0.65rem] font-bold uppercase tracking-[0.14em] text-tinta-soft'
-
-const INFO = [
-  {
-    label: 'Email',
-    value: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>,
-    icon: <path d="M4 6h16v12H4zM4 7l8 6 8-6" />,
-  },
-  {
-    label: 'Teléfono',
-    value: <a href={`tel:${SITE.telefonoIntl}`}>{SITE.telefono}</a>,
-    icon: <path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />,
-  },
-  {
-    label: 'Dirección',
-    value: SITE.direccion,
-    icon: (
-      <>
-        <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" />
-        <circle cx="12" cy="10" r="2.5" />
-      </>
-    ),
-  },
-  {
-    label: 'Horario de atención',
-    value: SITE.horario,
-    icon: <path d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />,
-  },
-]
 
 export function Contacto() {
   const [status, setStatus] = useState<Status>('idle')
@@ -66,8 +44,8 @@ export function Contacto() {
       <div className="mx-auto grid max-w-6xl gap-16 px-4 sm:px-6 lg:grid-cols-2">
         {/* Formulario */}
         <div>
-          <p className="mb-3 flex items-center gap-3 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-oxblood">
-            <span className="h-0.5 w-7 bg-oxblood" />
+          <p className="mb-3 flex items-center gap-3 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-oro">
+            <span className="h-0.5 w-7 bg-oro" />
             Consulta
           </p>
           <h2 className="font-display mb-3 text-3xl font-bold text-tinta sm:text-4xl">
@@ -79,13 +57,13 @@ export function Contacto() {
           </p>
 
           {status === 'ok' && (
-            <p className="mb-4 border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+            <p className="mb-4 border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
               Mensaje enviado correctamente. Nos pondremos en contacto a la
               brevedad.
             </p>
           )}
           {status === 'error' && (
-            <p className="mb-4 border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            <p className="mb-4 border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
               Hubo un error al enviar. Por favor intentá nuevamente o
               contactanos por WhatsApp.
             </p>
@@ -163,60 +141,114 @@ export function Contacto() {
 
         {/* Info de contacto */}
         <div>
-          <p className="mb-3 flex items-center gap-3 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-oxblood">
-            <span className="h-0.5 w-7 bg-oxblood" />
+          <p className="mb-3 flex items-center gap-3 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-oro">
+            <span className="h-0.5 w-7 bg-oro" />
             Contacto
           </p>
           <h2 className="font-display mb-8 text-3xl font-bold text-tinta sm:text-4xl">
             Contacto directo
           </h2>
 
-          <div className="mb-8 flex flex-col gap-5">
-            {INFO.map((item) => (
-              <div key={item.label} className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-oxblood text-crema">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-5 w-5"
-                  >
-                    {item.icon}
-                  </svg>
-                </span>
-                <div>
-                  <p className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-tinta-soft">
-                    {item.label}
-                  </p>
-                  <p className="mt-0.5 text-sm font-semibold text-tinta [&_a:hover]:text-oxblood">
-                    {item.value}
-                  </p>
-                </div>
+          {/* Dos abogados, dos canales */}
+          <div className="mb-8 grid gap-4 sm:grid-cols-2">
+            {CONTACTOS.map((c) => (
+              <div
+                key={c.email}
+                className="flex h-full flex-col border border-linea bg-papel p-5 transition hover:border-oro/40"
+              >
+                <p className="font-display text-base font-bold text-tinta">
+                  {c.nombre}
+                </p>
+                <a
+                  href={`mailto:${c.email}`}
+                  className="mt-2 break-all text-xs text-tinta-soft transition hover:text-oro"
+                >
+                  {c.email}
+                </a>
+                <a
+                  href={`tel:${c.telefonoIntl}`}
+                  className="mb-4 mt-1 text-xs text-tinta-soft transition hover:text-oro"
+                >
+                  {c.telefono}
+                </a>
+                <a
+                  href={whatsappUrl(c)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto flex items-center justify-center gap-2 bg-[#25d366] px-4 py-2.5 text-[0.65rem] font-bold uppercase tracking-wider text-white transition hover:bg-[#1da551]"
+                >
+                  <WhatsAppIcon className="h-3.5 w-3.5" />
+                  Hablar con {c.nombre.split(' ')[0]}
+                </a>
               </div>
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 border border-linea bg-papel p-6">
-            <div>
-              <p className="font-display text-lg font-bold text-tinta">
-                ¿Prefiere WhatsApp?
-              </p>
-              <p className="mt-1 text-sm text-tinta-soft">
-                Escribinos directamente y respondemos a la brevedad.
-              </p>
+          {/* Dirección + horario */}
+          <div className="mb-6 flex flex-col gap-5">
+            <div className="flex items-start gap-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-oxblood text-crema">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-5 w-5"
+                >
+                  <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-tinta-soft">
+                  Dirección
+                </p>
+                <a
+                  href={MAPS_LINK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-0.5 block text-sm font-semibold text-tinta transition hover:text-oro"
+                >
+                  {SITE.direccion}
+                </a>
+              </div>
             </div>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#25d366] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-[#1da551]"
-            >
-              <WhatsAppIcon className="h-4 w-4" />
-              Escribir
-            </a>
+            <div className="flex items-start gap-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-oxblood text-crema">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-5 w-5"
+                >
+                  <path d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-tinta-soft">
+                  Horario de atención
+                </p>
+                <p className="mt-0.5 text-sm font-semibold text-tinta">
+                  {SITE.horario}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Mapa */}
+          <div className="overflow-hidden border border-linea">
+            <iframe
+              title={`Mapa — ${SITE.direccion}`}
+              src={MAPS_EMBED_URL}
+              className="h-56 w-full [filter:grayscale(1)_invert(0.9)_contrast(0.85)]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </div>

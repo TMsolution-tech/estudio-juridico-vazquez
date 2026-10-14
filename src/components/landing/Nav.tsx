@@ -23,19 +23,15 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-linea bg-marfil/95 shadow-[0_2px_24px_rgba(0,0,0,0.08)] backdrop-blur'
-          : 'border-b border-transparent bg-transparent'
+          ? 'border-b border-linea bg-noche/90 shadow-[0_4px_30px_rgba(0,0,0,0.5)] backdrop-blur-md'
+          : 'border-b border-transparent bg-gradient-to-b from-noche/70 to-transparent'
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="#inicio" className="flex items-center gap-3">
-          <span
-            className={`flex h-10 w-10 items-center justify-center transition-colors ${
-              scrolled ? 'bg-oxblood' : 'bg-crema/10 ring-1 ring-crema/25'
-            }`}
-          >
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6">
+        <a href="#inicio" className="group flex items-center gap-3">
+          <span className="flex h-10 w-10 items-center justify-center border border-oro/40 bg-oro/10 transition group-hover:bg-oro/20">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -43,7 +39,7 @@ export function Nav() {
               strokeWidth="1.6"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={`h-5 w-5 ${scrolled ? 'text-oro' : 'text-oro'}`}
+              className="h-5 w-5 text-oro"
             >
               <path d="M12 3v18M8 21h8" />
               <path d="M4 7h16" />
@@ -52,18 +48,10 @@ export function Nav() {
             </svg>
           </span>
           <span className="leading-tight">
-            <span
-              className={`block text-[0.6rem] font-bold uppercase tracking-[0.22em] transition-colors ${
-                scrolled ? 'text-oro' : 'text-oro'
-              }`}
-            >
-              Vázquez
+            <span className="block text-[0.6rem] font-bold uppercase tracking-[0.28em] text-oro">
+              Vazquez
             </span>
-            <span
-              className={`font-display block text-base font-bold uppercase tracking-wide transition-colors ${
-                scrolled ? 'text-oxblood' : 'text-crema'
-              }`}
-            >
+            <span className="font-display block text-base font-bold uppercase tracking-wide text-crema">
               Estudio Penal
             </span>
           </span>
@@ -74,13 +62,10 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className={`text-sm transition-colors ${
-                scrolled
-                  ? 'text-tinta hover:text-oxblood'
-                  : 'text-crema/85 hover:text-oro'
-              }`}
+              className="group relative text-sm text-crema/80 transition hover:text-oro"
             >
               {l.label}
+              <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-oro transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
@@ -95,9 +80,7 @@ export function Nav() {
           type="button"
           aria-label="Abrir menú"
           onClick={() => setOpen((v) => !v)}
-          className={`flex h-10 w-10 items-center justify-center md:hidden ${
-            scrolled ? 'text-tinta' : 'text-crema'
-          }`}
+          className="flex h-10 w-10 items-center justify-center text-crema md:hidden"
         >
           <svg
             viewBox="0 0 24 24"
@@ -107,19 +90,23 @@ export function Nav() {
             strokeLinecap="round"
             className="h-6 w-6"
           >
-            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            {open ? (
+              <path d="M6 6l12 12M18 6L6 18" />
+            ) : (
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            )}
           </svg>
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-linea bg-marfil px-4 pb-6 pt-2 md:hidden">
+        <nav className="border-t border-linea bg-noche/95 px-4 pb-6 pt-2 backdrop-blur-md md:hidden">
           {LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-linea py-3 text-sm font-medium text-tinta"
+              className="block border-b border-linea py-3 text-sm font-medium text-crema"
             >
               {l.label}
             </a>
