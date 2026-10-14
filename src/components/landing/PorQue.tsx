@@ -4,13 +4,8 @@ import { Counter } from '@/components/Counter'
 const ITEMS = [
   {
     name: 'Experiencia',
-    desc: 'Más de 15 años de trayectoria en el fuero penal. Conocemos los procesos, los tiempos y las estrategias de defensa más efectivas.',
+    desc: 'Trayectoria consolidada en el fuero penal. Conocemos los procesos, los tiempos y las estrategias de defensa más efectivas.',
     icon: <path d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM9.5 13 8 20l4-2.2L16 20l-1.5-7" />,
-  },
-  {
-    name: 'Resultados',
-    desc: 'Historial comprobable de casos exitosos. Nuestros clientes obtienen resultados reales gracias a una defensa sólida y planificada.',
-    icon: <path d="M8 21h8m-4-4v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4a2 2 0 0 0 2 4h1m10-4h3a2 2 0 0 1-2 4h-1" />,
   },
   {
     name: 'Compromiso Personal',
@@ -46,11 +41,9 @@ export function PorQue() {
           </p>
           <div className="mt-10 flex gap-12 border-t border-linea pt-8">
             <div>
-              <p className="font-display text-5xl font-black text-oro">
-                <Counter to={15} suffix="+" />
-              </p>
+              <p className="font-display text-5xl font-black text-oro">Salta</p>
               <p className="mt-1 text-xs uppercase tracking-widest text-tinta-soft">
-                Años de trayectoria
+                Fuero penal
               </p>
             </div>
             <div>
@@ -64,7 +57,7 @@ export function PorQue() {
           </div>
         </Reveal>
 
-        <div className="grid gap-10 sm:grid-cols-2">
+        <div className="flex flex-col gap-10">
           {ITEMS.map((item, i) => (
             <Reveal key={item.name} delay={i * 100}>
               <div className="group flex gap-4">
