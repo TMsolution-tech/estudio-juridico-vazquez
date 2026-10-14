@@ -9,7 +9,7 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-sm border border-linea-noche bg-noche-2 p-8 shadow-2xl shadow-black/50">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/logo-mark.svg"
+          src="/logo.svg"
           alt="Vazquez Estudio Penal"
           className="mx-auto h-20 w-20 rounded-full"
         />

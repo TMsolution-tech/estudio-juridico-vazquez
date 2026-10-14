@@ -25,7 +25,7 @@ export function AdminDashboard() {
         <p className="font-display flex items-center gap-2.5 text-sm font-bold uppercase tracking-wide text-crema">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo-mark.svg"
+            src="/logo.svg"
             alt=""
             className="h-8 w-8 rounded-full"
           />

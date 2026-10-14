@@ -33,7 +33,7 @@ export function Nav() {
         <a href="#inicio" className="group flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo-mark.svg"
+            src="/logo.svg"
             alt="Vazquez Estudio Penal"
             className="h-11 w-11 rounded-full transition group-hover:scale-105"
           />

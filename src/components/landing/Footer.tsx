@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex items-center gap-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo-mark.svg"
+            src="/logo.svg"
             alt="Vazquez Estudio Penal"
             className="h-12 w-12 rounded-full"
           />
