@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-  <circle cx="120" cy="120" r="114" fill="#111" stroke="#b7b0a2" stroke-width="2"/>
+  <circle cx="120" cy="120" r="114" fill="#111" stroke="#d0a94f" stroke-width="2.5"/>
   <!-- Doble V: trazo grueso + fino desplazado -->
-  <text x="112" y="118" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#d6cfc0">V</text>
-  <text x="137" y="118" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="400" fill="none" stroke="#9d9688" stroke-width="1.5">V</text>
-  <text x="120" y="164" text-anchor="middle" font-family="Georgia, serif" font-size="13" letter-spacing="4" fill="#a8a294">ESTUDIO JURÍDICO</text>
-  <line x1="103" y1="178" x2="137" y2="178" stroke="#8d867a" stroke-width="1"/>
-  <text x="120" y="205" text-anchor="middle" font-family="Georgia, serif" font-size="21" letter-spacing="7" fill="#c9c2b4">VAZQUEZ</text>
+  <text x="112" y="118" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#ecd9a3">V</text>
+  <text x="137" y="118" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="400" fill="none" stroke="#b89344" stroke-width="1.5">V</text>
+  <text x="120" y="164" text-anchor="middle" font-family="Georgia, serif" font-size="13" letter-spacing="4" fill="#b8a05e">ESTUDIO JURÍDICO</text>
+  <line x1="103" y1="178" x2="137" y2="178" stroke="#a98f4e" stroke-width="1"/>
+  <text x="120" y="205" text-anchor="middle" font-family="Georgia, serif" font-size="21" letter-spacing="7" fill="#ecd9a3">VAZQUEZ</text>
 </svg>

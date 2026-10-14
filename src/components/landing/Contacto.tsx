@@ -245,7 +245,7 @@ export function Contacto() {
             <iframe
               title={`Mapa — ${SITE.direccion}`}
               src={MAPS_EMBED_URL}
-              className="h-56 w-full [filter:grayscale(1)_invert(0.9)_contrast(0.85)]"
+              className="h-56 w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
