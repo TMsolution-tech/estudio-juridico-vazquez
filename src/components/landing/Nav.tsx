@@ -31,22 +31,12 @@ export function Nav() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6">
         <a href="#inicio" className="group flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center border border-oro/40 bg-oro/10 transition group-hover:bg-oro/20">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5 text-oro"
-            >
-              <path d="M12 3v18M8 21h8" />
-              <path d="M4 7h16" />
-              <path d="M6 7l-3 7h6l-3-7M18 7l-3 7h6l-3-7" />
-              <path d="M3 14a3 3 0 0 0 6 0M15 14a3 3 0 0 0 6 0" />
-            </svg>
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.svg"
+            alt="Vazquez Estudio Penal"
+            className="h-11 w-11 rounded-full transition group-hover:scale-105"
+          />
           <span className="leading-tight">
             <span className="block text-[0.6rem] font-bold uppercase tracking-[0.28em] text-oro">
               Vazquez

@@ -22,9 +22,15 @@ export function AdminDashboard() {
   return (
     <div>
       <header className="sticky top-0 z-40 flex items-center justify-between border-b border-linea-noche bg-noche px-5 py-3 sm:px-8">
-        <p className="font-display text-sm font-bold uppercase tracking-wide text-crema">
+        <p className="font-display flex items-center gap-2.5 text-sm font-bold uppercase tracking-wide text-crema">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.svg"
+            alt=""
+            className="h-8 w-8 rounded-full"
+          />
           Estudio Penal <span className="text-oro">Vazquez</span>
-          <span className="ml-3 bg-oxblood px-2 py-0.5 text-[0.6rem] tracking-widest text-crema">
+          <span className="ml-1 bg-oxblood px-2 py-0.5 text-[0.6rem] tracking-widest text-crema">
             Backoffice
           </span>
         </p>
