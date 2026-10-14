@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta Vázquez Estudio Penal — marfil + oxblood + oro */
+  --color-marfil: #f5f1e8; /* fondo página */
+  --color-papel: #fbf8f1; /* cards sobre marfil */
+  --color-tinta: #1c1815; /* texto principal */
+  --color-tinta-soft: #6f6557; /* texto secundario */
+  --color-oxblood: #7d1a2b; /* acento principal */
+  --color-vino: #5a1120; /* hover / oxblood oscuro */
+  --color-noche: #16120f; /* superficies oscuras: hero, footer, admin */
+  --color-noche-2: #241d18; /* elevado sobre noche */
+  --color-oro: #c9a84c; /* acento dorado */
+  --color-oro-soft: #e4cf93;
+  --color-linea: #e2dac9; /* bordes sobre marfil */
+  --color-linea-noche: #3b322a; /* bordes sobre noche */
+  --color-crema: #f3ecdd; /* texto claro sobre noche */
+  --color-crema-soft: #b8ab93; /* texto secundario sobre noche */
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: only light; /* bloquea el auto-dark-mode del navegador */
+}
+
+body {
+  background: var(--color-marfil);
+  color: var(--color-tinta);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
