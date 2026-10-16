@@ -3,6 +3,7 @@ export const SITE = {
   nombre: 'Vazquez Estudio Penal',
   direccion: 'Zuviría 265, Salta, Argentina',
   horario: 'Lunes a Viernes · 9:00 – 13:00 hs · 18:00 – 20:30 hs',
+  instagram: 'https://www.instagram.com/vazquezestudiopenal',
   whatsappMsg:
     'Hola, me comunico desde el sitio web y quisiera obtener información sobre sus servicios legales. Muchas gracias.',
 }
