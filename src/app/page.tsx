@@ -6,9 +6,63 @@ import { Novedades } from '@/components/landing/Novedades'
 import { Contacto } from '@/components/landing/Contacto'
 import { Footer } from '@/components/landing/Footer'
 import { WhatsAppFloat } from '@/components/landing/WhatsAppFloat'
+import { CONTACTOS, MAPS_LINK_URL, SITE } from '@/lib/site'
+import { SITE_URL } from '@/lib/seo'
 import type { Novedad } from '@/lib/types'
 
 export const dynamic = 'force-dynamic'
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LegalService',
+  name: SITE.nombre,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.svg`,
+  image: `${SITE_URL}/logo.svg`,
+  description:
+    'Estudio jurídico especializado en defensa penal en Salta, Argentina.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Zuviría 265',
+    addressLocality: 'Salta',
+    addressRegion: 'Salta',
+    addressCountry: 'AR',
+  },
+  telephone: CONTACTOS.map((contacto) => contacto.telefonoIntl),
+  email: CONTACTOS.map((contacto) => contacto.email),
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+      ],
+      opens: '09:00',
+      closes: '13:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+      ],
+      opens: '18:00',
+      closes: '20:30',
+    },
+  ],
+  areaServed: {
+    '@type': 'City',
+    name: 'Salta',
+  },
+  hasMap: MAPS_LINK_URL,
+  sameAs: [SITE.instagram],
+}
 
 async function getNovedades(): Promise<Novedad[]> {
   // Sin credenciales todavía → sección vacía, el sitio igual funciona.
@@ -33,6 +87,12 @@ export default async function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema).replace(/</g, '\\u003c'),
+        }}
+      />
       <Nav />
       <main className="flex-1">
         <Hero />
