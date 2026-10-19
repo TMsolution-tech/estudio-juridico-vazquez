@@ -7,9 +7,9 @@ export function Footer() {
         <div className="flex items-center gap-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.svg"
+            src="/logo-vazquez.webp"
             alt="Vazquez Estudio Penal"
-            className="h-12 w-12 rounded-full"
+            className="h-14 w-14 rounded-full object-cover"
           />
           <div>
             <p className="font-display text-lg font-bold uppercase tracking-wide text-crema">

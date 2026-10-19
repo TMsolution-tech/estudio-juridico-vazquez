@@ -33,9 +33,9 @@ export function Nav() {
         <a href="#inicio" className="group flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.svg"
+            src="/logo-vazquez.webp"
             alt="Vazquez Estudio Penal"
-            className="h-11 w-11 rounded-full transition group-hover:scale-105"
+            className="h-12 w-12 rounded-full object-cover transition group-hover:scale-105"
           />
           <span className="leading-tight">
             <span className="block text-[0.6rem] font-bold uppercase tracking-[0.28em] text-oro">

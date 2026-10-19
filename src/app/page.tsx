@@ -17,8 +17,8 @@ const localBusinessSchema = {
   '@type': 'LegalService',
   name: SITE.nombre,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.svg`,
-  image: `${SITE_URL}/logo.svg`,
+  logo: `${SITE_URL}/logo-vazquez.webp`,
+  image: `${SITE_URL}/logo-vazquez.webp`,
   description:
     'Estudio jurídico especializado en defensa penal en Salta, Argentina.',
   address: {
